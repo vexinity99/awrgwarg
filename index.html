@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .login-container button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+        #skibidiBtn {
+            display: none;
+            padding: 10px 20px;
+            background-color: #FF5722;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        #skibidiBtn:hover {
+            background-color: #e64a19;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container" id="loginContainer">
+        <h2>Login</h2>
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="checkPassword()">Login</button>
+        <div class="error-message" id="errorMessage">Incorrect password</div>
+    </div>
+
+    <button id="skibidiBtn" onclick="skibidiAction()">Skibidi</button>
+
+    <script>
+        const correctPassword = "a1"; // Set your correct password here
+
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const loginContainer = document.getElementById("loginContainer");
+            const errorMessage = document.getElementById("errorMessage");
+            const skibidiBtn = document.getElementById("skibidiBtn");
+
+            if (password === correctPassword) {
+                loginContainer.style.display = "none"; // Remove the login screen
+                skibidiBtn.style.display = "block"; // Show the Skibidi button
+            } else {
+                errorMessage.style.display = "block"; // Show error message
+                alert("Incorrect password");
+            }
+        }
+
+        function skibidiAction() {
+            alert("Skibidi action triggered!");
+        }
+    </script>
+
+</body>
+</html>
